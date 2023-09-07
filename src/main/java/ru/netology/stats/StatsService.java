@@ -25,9 +25,9 @@ public class StatsService {
     //Пункт №3 номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму
     public int getMonthWithTheHighestSales(int[] salesPerMonth) {
         int monthWithTheHighestSales = 0;
-        for (int i = 0; i < salesPerMonth.length; i++) {
+        for (int i = 11; i >= 0; i--) {
             if (salesPerMonth[i] > salesPerMonth[monthWithTheHighestSales]) {
-                monthWithTheHighestSales++;
+                monthWithTheHighestSales = i;
             }
         }
         return monthWithTheHighestSales + 1;
@@ -37,7 +37,7 @@ public class StatsService {
     //Пункт №4 номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
     public int getMonthWithMinimalSales(int[] salesPerMonth) {
         int monthWithMinimalSales = 0;
-        for (int i = 0; i < salesPerMonth.length; i++) {
+        for (int i = 11; i >= 0; i--) {
             if (salesPerMonth[i] < salesPerMonth[monthWithMinimalSales]) {
                 monthWithMinimalSales = i;
             }

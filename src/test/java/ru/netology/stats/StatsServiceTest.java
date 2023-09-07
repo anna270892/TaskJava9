@@ -46,7 +46,7 @@ public class StatsServiceTest {
 
         int[] salesPerMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18}; //данные массива
 
-        int expected = 6; // ожидаемый результат
+        int expected = 8; // ожидаемый результат
         int actual = service.getMonthWithTheHighestSales(salesPerMonth); //фактический результат
 
         Assertions.assertEquals(expected, actual);
