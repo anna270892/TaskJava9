@@ -5,20 +5,20 @@ public class StatsService {
 
     //Пункт №1 общая сумма продаж за 12 месяцев
     public int getTotalAmount(int[] salesPerMonth) {
-        int TotalAmount = 0;
+        int totalAmount = 0;
 
         for (int i = 0; i < salesPerMonth.length; i++) {
-            TotalAmount = TotalAmount + salesPerMonth[i];
+            totalAmount = totalAmount + salesPerMonth[i];
         }
-        return TotalAmount;
+        return totalAmount;
 
     }
 
 
     //Пункт №2 средняя сумма продаж в месяц
     public int getAverageSalesPerMonth(int[] salesPerMonth) {
-        int AverageSalesPerMonth = getTotalAmount(salesPerMonth) / 12;
-        return AverageSalesPerMonth;
+        int averageSalesPerMonth = getTotalAmount(salesPerMonth) / 12;
+        return averageSalesPerMonth;
     }
 
 
@@ -49,9 +49,9 @@ public class StatsService {
     //Пункт №5 количество месяцев, в которых продажи были ниже среднего
     public int getNumberOfMonthsWithSalesBelowAverage(int[] salesPerMonth) {
         int numberOfMonthsWithSalesBelowAverage = 0;
-        int AverageSalesPerMonthNumberOfMonthsWithSalesBelowAverage = getAverageSalesPerMonth(salesPerMonth); //15
+        int salesBelowAverage = getAverageSalesPerMonth(salesPerMonth); //15
         for (int i = 0; i < salesPerMonth.length; i++) {
-            if (salesPerMonth[i] < AverageSalesPerMonthNumberOfMonthsWithSalesBelowAverage) {
+            if (salesPerMonth[i] < salesBelowAverage) {
                 numberOfMonthsWithSalesBelowAverage++;
             }
         }
@@ -62,9 +62,9 @@ public class StatsService {
     //Пункт №6 количество месяцев, в которых продажи были выше среднего
     public int getNumberOfMonthsWithAboveAverageSales(int[] salesPerMonth) {
         int numberOfMonthsWithAboveAverageSales = 0;
-        int AverageSalesPerMonthNumberOfMonthsWithSalesBelowAverage = getAverageSalesPerMonth(salesPerMonth); //15
+        int averageSalesPerMonthNumberOfMonthsWithSalesBelowAverage = getAverageSalesPerMonth(salesPerMonth); //15
         for (int i = 0; i < salesPerMonth.length; i++) {
-            if (salesPerMonth[i] >= AverageSalesPerMonthNumberOfMonthsWithSalesBelowAverage) {
+            if (salesPerMonth[i] >= averageSalesPerMonthNumberOfMonthsWithSalesBelowAverage) {
                 numberOfMonthsWithAboveAverageSales++;
             }
         }
